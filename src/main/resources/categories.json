@@ -1,0 +1,173 @@
+[
+  {
+    "name": "Electronics",
+    "subcategories": [
+      {
+        "name": "Mobile Phones"
+      },
+      {
+        "name": "Laptops"
+      },
+      {
+        "name": "Tablets"
+      },
+      {
+        "name": "Cameras"
+      },
+      {
+        "name": "TVs"
+      },
+      {
+        "name": "Headphones"
+      },
+      {
+        "name": "Smartwatches"
+      }
+    ]
+  },
+  {
+    "name": "Fashion",
+    "subcategories": [
+      {
+        "name": "Pants"
+      },
+      {
+        "name": "Shirts"
+      },
+      {
+        "name": "Shoes"
+      },
+      {
+        "name": "Watches"
+      },
+      {
+        "name": "Sunglasses"
+      },
+      {
+        "name": "Bags"
+      }
+    ]
+  },
+  {
+    "name": "Video Games",
+    "subcategories": [
+      {
+        "name": "Consoles"
+      },
+      {
+        "name": "Games"
+      },
+      {
+        "name": "Accessories"
+      }
+    ]
+  },
+  {
+    "name": "Books",
+    "subcategories": [
+      {
+        "name": "Fiction"
+      },
+      {
+        "name": "Non-Fiction"
+      },
+      {
+        "name": "Children's Books"
+      }
+    ]
+  },
+  {
+    "name": "Home & Kitchen",
+    "subcategories": [
+      {
+        "name": "Furniture"
+      },
+      {
+        "name": "Appliances"
+      },
+      {
+        "name": "Cookware"
+      }
+    ]
+  },
+  {
+    "name": "Beauty & Personal Care",
+    "subcategories": [
+      {
+        "name": "Makeup"
+      },
+      {
+        "name": "Skincare"
+      },
+      {
+        "name": "Haircare"
+      },
+      {
+        "name": "Fragrances"
+      },
+      {
+        "name": "Personal Care"
+      }
+    ]
+  },
+  {
+    "name": "Sports & Outdoors",
+    "subcategories": [
+      {
+        "name": "Fitness"
+      },
+      {
+        "name": "Outdoor Recreation"
+      },
+      {
+        "name": "Team Sports"
+      },
+      {
+        "name": "Athletic Clothing"
+      },
+      {
+        "name": "Footwear"
+      }
+    ]
+  },
+  {
+    "name": "Toys & Games",
+    "subcategories": [
+      {
+        "name": "Action Figures"
+      },
+      {
+        "name": "Dolls"
+      },
+      {
+        "name": "Board Games"
+      },
+      {
+        "name": "Puzzles"
+      },
+      {
+        "name": "Outdoor Play"
+      }
+    ]
+  },
+  {
+    "name": "Home",
+    "subcategories": [
+      {
+        "name": "Bedding"
+      },
+      {
+        "name": "Bath"
+      },
+      {
+        "name": "Decor"
+      },
+      {
+        "name": "Lighting"
+      },
+      {
+        "name": "Storage"
+      }
+    ]
+  }
+]
