@@ -69,15 +69,15 @@
         "name": "Fiction"
       },
       {
-        "name": "Non-Fiction"
+        "name": "NonFiction"
       },
       {
-        "name": "Children's Books"
+        "name": "Children"
       }
     ]
   },
   {
-    "name": "Home & Kitchen",
+    "name": "Home",
     "subcategories": [
       {
         "name": "Furniture"
@@ -91,7 +91,7 @@
     ]
   },
   {
-    "name": "Beauty & Personal Care",
+    "name": "Beauty",
     "subcategories": [
       {
         "name": "Makeup"
@@ -111,7 +111,7 @@
     ]
   },
   {
-    "name": "Sports & Outdoors",
+    "name": "Sports Outdoors",
     "subcategories": [
       {
         "name": "Fitness"
@@ -131,7 +131,7 @@
     ]
   },
   {
-    "name": "Toys & Games",
+    "name": "Toys Games",
     "subcategories": [
       {
         "name": "Action Figures"

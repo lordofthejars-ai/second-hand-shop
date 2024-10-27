@@ -14,7 +14,7 @@ public class Category extends PanacheEntity {
 
     public String name;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     public List<Subcategory> subcategories;
 
     public Category() {

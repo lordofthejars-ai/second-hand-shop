@@ -16,7 +16,7 @@ h2 {
 
 /* Drag-and-drop container */
 .upload-container {
-    width: 300px;
+    width: 800px;
     text-align: center;
 }
 
@@ -38,7 +38,7 @@ h2 {
 
 /* Form Styles */
 .form-container {
-    width: 400px;
+    width: 600px;
 }
 
 form {
@@ -58,6 +58,10 @@ input, textarea {
     font-size: 16px;
 }
 
+textarea {
+    height: 100px
+}
+
 button {
     margin-top: 20px;
     padding: 10px;
@@ -66,6 +70,13 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 16px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
     font-size: 16px;
 }
 

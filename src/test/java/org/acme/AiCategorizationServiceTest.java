@@ -29,7 +29,7 @@ public class AiCategorizationServiceTest {
         """;
 
         final ItemCategory itemCategory = categorizationService.categorize(item);
-        assertThat(itemCategory.category).isEqualTo("Electronics");
+        assertThat(itemCategory.category).isEqualTo("Video Games");
         assertThat(itemCategory.subcategory).isEqualTo("Consoles");
     }
 

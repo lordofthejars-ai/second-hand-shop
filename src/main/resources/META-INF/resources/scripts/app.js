@@ -65,9 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (response.ok) {
                 statusMessage.textContent = 'Image uploaded successfully!';
                 // Redirect to form.html after a delay
-                setTimeout(() => {
-                    window.location.href = 'form.html';
-                }, 1000);
+                response.json()
+                .then(data => {
+                    setTimeout(() => {
+                        window.location.href = 'form.html?productId=' + data.id;
+                    }, 1000);
+                })
             } else {
                 statusMessage.textContent = 'Failed to upload image.';
             }
@@ -77,38 +80,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Handle form submission on form.html page
-    const productForm = document.getElementById('productForm');
-    if (productForm) {
-        productForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const formData = new FormData(productForm);
-            const data = {
-                name: formData.get('name'),
-                model: formData.get('model'),
-                brand: formData.get('brand'),
-                description: formData.get('description'),
-                price: formData.get('price')
-            };
-
-            // Simulate sending the form data to the server
-            fetch('your-server-product-url', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert('Product information submitted successfully!');
-                // Redirect to another page if needed
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Failed to submit the product.');
-            });
-        });
-    }
 });

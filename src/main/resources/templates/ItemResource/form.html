@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Form</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div class="form-container">
+    <h2>Enter Product Details</h2>
+    <form id="productForm">
+        <label for="label">Name:</label>
+        <input type="text" id="label" name="label" value="{product.label}" required>
+
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" value="{product.model}" required>
+
+        <label for="brand">Brand:</label>
+        <input type="text" id="brand" name="brand" value="{product.brand}" required>
+
+        <label for="condition">Condition:</label>
+        <input type="text" id="condition" name="condition" value="{product.condition}" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required>{product.description}</textarea>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" step="0.01" value="{product.price}" required>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+            <option value="">-- Select a Category --</option>
+            {#for category in categories}
+                <option value="{category.name.replace(' ', '')}"
+                        {#if category.name.equals(product.category)} selected {/if}
+                >
+                    {category.name}
+                </option>
+            {/for}
+        </select>
+
+        <!-- Subcategory Dropdown -->
+        <label for="subcategory">Subcategory:</label>
+        <select id="subcategory" name="subcategory">
+            <option value="">-- Select a Subcategory --</option>
+            {#for category in categories}
+              {#if category.name.equals(product.category)}
+                {#for subcategory in category.subcategories}
+                    <option value="{subcategory.name.replace(' ', '')}"
+                            {#if subcategory.name.equals(product.subcategory)} selected {/if}
+            >
+                        {subcategory.name}
+                    </option>
+                {/for}
+              {/if}
+            {/for}
+
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+    <div class="status-message" id="statusMessage"></div>
+</div>
+
+
+<script>
+    // Object mapping categories to subcategories
+    const categoryData = {
+        {#for category in categories}
+            {category.name.replace(' ', '')}: [
+                {#for subcategory in category.subcategories}
+                    "{subcategory.name}",
+                {/for}
+            ],
+        {/for}
+    };
+
+    // Get references to the select elements
+    const categorySelect = document.getElementById('category');
+    const subcategorySelect = document.getElementById('subcategory');
+
+    // Event listener to update the subcategories based on selected category
+    categorySelect.addEventListener('change', function () {
+        const selectedCategory = this.value;
+
+        // Clear previous subcategory options
+        subcategorySelect.innerHTML = '<option value="">-- Select a Subcategory --</option>';
+
+        if (selectedCategory && categoryData[selectedCategory]) {
+            // Get the subcategories of the selected category
+            const subcategories = categoryData[selectedCategory];
+
+            // Populate the subcategory dropdown with new options
+            subcategories.forEach(subcategory => {
+                const option = document.createElement('option');
+                option.value = subcategory.toLowerCase().replace(/\s+/g, '-');
+                option.textContent = subcategory;
+                subcategorySelect.appendChild(option);
+            });
+        }
+    });
+</script>
+<script src="scripts/insert.js"></script>
+</body>
+</html>
