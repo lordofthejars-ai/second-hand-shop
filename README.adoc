@@ -15,4 +15,4 @@ To start the example you need to:
 * Have Docker or Podman Desktop installed in your computer in order to Quarkus automatically start PostgreSQL database.
 * Run `./mvnw quarkus:dev`
 
-video::Vb040WKL98U[youtube]
+Video Demo: https://youtu.be/Vb040WKL98U 
