@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function uploadImage(file) {
         const formData = new FormData();
         formData.append('image', file);
-
+         document.getElementById("spinnerOverlay").style.display = "flex";
         // Simulate server upload with Fetch API
         fetch('uploadItem', {
             method: 'POST',
@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Redirect to form.html after a delay
                 response.json()
                 .then(data => {
+                    document.getElementById("spinnerOverlay").style.display = "none";
                     setTimeout(() => {
                         window.location.href = 'form.html?productId=' + data.id;
                     }, 1000);
