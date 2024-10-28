@@ -38,7 +38,7 @@ document.getElementById('productForm').addEventListener('submit', async function
                 const statusMessage = document.getElementById('statusMessage');
                 if (response.ok) {
                     setTimeout(() => {
-                                window.location.href = 'anim.html'
+                                window.location.href = 'list.html'
                     }, 1000);
                 } else {
                     statusMessage.textContent = `Error: ${result.message || 'Failed to submit product'}`;

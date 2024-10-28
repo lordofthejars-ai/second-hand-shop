@@ -1,0 +1,18 @@
+= Second Hand Shop
+
+Modified version of https://github.com/azure-Samples/java-ai.
+
+It is a simplified version keeping similar functions but:
+
+* Monolith to simplify deployment for demo
+* Quarkus to fast start time, dev services for DB
+* Quarkus LangChain4J for easy integration with LangChain4J and Quarkus, and extra features like Guard Rails
+* Qute for Server Side frontend rendering to make it easy for backend developers
+
+To start the example you need to:
+
+* Set `QUARKUS_LANGCHAIN4J_OPENAI_API_KEY` with your OpenAI API Key.
+* Have Docker or Podman Desktop installed in your computer in order to Quarkus automatically start PostgreSQL database.
+* Run `./mvnw quarkus:dev`
+
+video::Vb040WKL98U[youtube]

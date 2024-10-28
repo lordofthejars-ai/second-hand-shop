@@ -19,6 +19,8 @@ import org.jboss.resteasy.reactive.RestForm;
 import org.jboss.resteasy.reactive.RestQuery;
 import org.jboss.resteasy.reactive.multipart.FileUpload;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,6 +31,16 @@ public class ItemResource {
     @CheckedTemplate
     public static class Templates {
         public static native TemplateInstance form(Product product, List<Category> categories);
+        public static native TemplateInstance list(List<Product> products);
+    }
+
+    @GET
+    @Path("/list.html")
+    @Produces(MediaType.TEXT_HTML)
+    @Transactional
+    public TemplateInstance list() {
+        List<Product> products = Product.listAll();
+        return Templates.list(products);
     }
 
     @GET
@@ -60,14 +72,20 @@ public class ItemResource {
 
     }
 
+    @Inject
+    ItemRecognition itemRecognition;
+
     @POST
     @Path("uploadItem")
-    public Response uploadItem(@RestForm("image") FileUpload file) {
-        System.out.println(file.contentType());
-        System.out.println(file.uploadedFile());
+    public Response uploadItem(@RestForm("image") FileUpload file) throws IOException {
+
+        Product product = itemRecognition.detectAndSaveProduct(
+                Files.readAllBytes(file.uploadedFile()),
+                file.contentType()
+        );
 
         final Map<String, Object> returnObject = new HashMap<>();
-        returnObject.put("id", 1L);
+        returnObject.put("id", product.id);
         JsonObject jsonObject = new JsonObject(returnObject);
 
         return Response.ok().entity(jsonObject).build();

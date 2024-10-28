@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product-list {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .product {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #007bff;
+        }
+
+        .product-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-header div {
+            flex: 1 1 calc(25% - 10px);
+        }
+
+        .product-label {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .product-brand,
+        .product-model,
+        .product-price,
+        .product-category,
+        .product-subcategory,
+        .product-condition {
+            color: #555;
+        }
+
+        .product-price {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .product-description {
+            margin-top: 10px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .product-header div {
+                flex: 1 1 calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .product-header div {
+                flex: 1 1 100%;
+            }
+
+            .product-price {
+                text-align: right;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="product-list">
+    <h1>Product List</h1>
+
+    {#for product in products}
+
+        <div class="product">
+            <div class="product-header">
+                <div class="product-label"><b>Label: </b>{product.label}</div>
+                <div class="product-brand"><b>Brand: </b>{product.brand}</div>
+                <div class="product-model"><b>Model: </b>{product.model}</div>
+                <div class="product-price"><b>Price: </b>{product.price}</div>
+                <div class="product-category"><b>Category: </b>{product.category}</div>
+                <div class="product-subcategory"><b>Subcategory: </b>{product.subcategory}</div>
+                <div class="product-condition"><b>Condition: </b>{product.condition}</div>
+            </div>
+            <div class="product-description">
+                <b>Description: </b>{product.description}
+            </div>
+        </div>
+    {/for}
+
+
+</div>
+
+</body>
+</html>
